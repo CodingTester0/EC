@@ -370,10 +370,12 @@
 
   <section id="testimonials" class="position-relative pb-3">
     <div class="container mt-1">
-      <div class="row pt-5">
-        <div class="review-content">
-
-          <article class="col-md-4 review-item element-item">
+        <div class="row pt-5">
+            <!-- Swiper Container -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial Item -->
+                    <article class="swiper-slide col-md-4 review-item element-item">
                         <div class="review-content1">
                             <div class="review-header">
                                 <div class="rating-star">
@@ -394,53 +396,59 @@
                         </div>
                     </article>
 
-                    <article class="col-md-4 review-item element-item">
-                      <div class="review-content1">
-                          <div class="review-header">
-                              <div class="rating-star">
-                                  <i class="icon icon-star"></i>
-                                  <i class="icon icon-star"></i>
-                                  <i class="icon icon-star"></i>
-                                  <i class="icon icon-star"></i>
-                                  <i class="icon icon-star"></i>
-                              </div>
-                              <p class="review-time" data-date="2024-06-26">a day ago</p>
-                          </div>
-                          <div class="review-body">
-                              <p>5</p>
-                          </div>
-                          <div class="verified-purchase">
-                              <i class="icon icon-check"></i> Verified Purchase &#10004;
-                          </div>
-                      </div>
-                  </article>
-
-                  <article class="col-md-4 review-item element-item">
-                    <div class="review-content1">
-                        <div class="review-header">
-                            <div class="rating-star">
-                                <i class="icon icon-star"></i>
-                                <i class="icon icon-star"></i>
-                                <i class="icon icon-star"></i>
-                                <i class="icon icon-star"></i>
-                                <i class="icon icon-star"></i>
+                    <article class="swiper-slide col-md-4 review-item element-item">
+                        <div class="review-content1">
+                            <div class="review-header">
+                                <div class="rating-star">
+                                    <i class="icon icon-star"></i>
+                                    <i class="icon icon-star"></i>
+                                    <i class="icon icon-star"></i>
+                                    <i class="icon icon-star"></i>
+                                    <i class="icon icon-star"></i>
+                                </div>
+                                <p class="review-time" data-date="2024-06-26">a day ago</p>
                             </div>
-                            <p class="review-time" data-date="2024-06-26">a day ago</p>
+                            <div class="review-body">
+                                <p>5</p>
+                            </div>
+                            <div class="verified-purchase">
+                                <i class="icon icon-check"></i> Verified Purchase &#10004;
+                            </div>
                         </div>
-                        <div class="review-body">
-                            <p>good quality</p>
-                        </div>
-                        <div class="verified-purchase">
-                            <i class="icon icon-check"></i> Verified Purchase &#10004;
-                        </div>
-                    </div>
-                </article>
+                    </article>
 
-       
-      </div>
+                    <article class="swiper-slide col-md-4 review-item element-item">
+                        <div class="review-content1">
+                            <div class="review-header">
+                                <div class="rating-star">
+                                    <i class="icon icon-star"></i>
+                                    <i class="icon icon-star"></i>
+                                    <i class="icon icon-star"></i>
+                                    <i class="icon icon-star"></i>
+                                    <i class="icon icon-star"></i>
+                                </div>
+                                <p class="review-time" data-date="2024-06-26">a day ago</p>
+                            </div>
+                            <div class="review-body">
+                                <p>good quality</p>
+                            </div>
+                            <div class="verified-purchase">
+                                <i class="icon icon-check"></i> Verified Purchase &#10004;
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Pagination and Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="btn-center">
+              <a href="reviews.html" class="btn btn-medium btn-light">Read All</a>
+            </div>
+        </div>
     </div>
-    <div class="swiper-pagination"></div>
-  </section>
+</section>
 
   <!--
   <section id="new-arrivals" class="product-store padding-large position-relative overflow-hidden">
@@ -919,6 +927,30 @@
   })();
   </script>
   <!--End of Tawk.to Script-->
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".mySwiper", {
+            loop: true, // Enables infinite scrolling
+            spaceBetween: 20, // Adjust spacing
+            slidesPerView: 1, // Show 1 slide at a time
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 }, // Show 2 slides on tablets
+                1024: { slidesPerView: 3 }, // Show 3 slides on larger screens
+            },
+        });
+    });
+</script>
+
 
 </body>
 
