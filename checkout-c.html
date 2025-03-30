@@ -435,7 +435,7 @@
           </div>
           <div class="col-lg-6">
             <h2 class="text-dark pb-3">Order Information</h2>
-            <h4 style="color: black;">1:1 Notes<br> Amount: 1500€</h3>
+            <h4 style="color: black;">1:1 Notes<br> Amount: 3200€</h3>
             <div class="your-order mt-5">
               <h2 class="display-7 text-dark pb-3">Cart Total</h2>
               <div class="total-price">
@@ -454,26 +454,41 @@
                   </tbody>
                 </table>
                 <div class="list-group mt-5 mb-3">
-                  <!-- PayPal Option -->
-                  <label class="list-group-item d-flex gap-2 border-0">
-                    <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="paypal" id="paypal" />
-                    <span>
-                      <strong class="text-uppercase">PayPal</strong>
-                      <small class="d-block text-body-secondary">Pay via PayPal, Friends & Family</small>
-                    </span>
-                  </label>
-                  
-                  <!-- Crypto Option -->
-                  <label class="list-group-item d-flex gap-2 border-0">
-                    <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="crypto" id="crypto" />
-                    <span>
-                      <strong class="text-uppercase">Cryptocurrency</strong>
-                      <small class="d-block text-body-secondary">Pay via Crypto coins.</small>
-                    </span>
-                  </label>
-                </div>
-                
-                <button type="button" name="submit" class="btn btn-dark btn-lg rounded-1 w-100" id="submitBtn">Place an order</button>
+
+              <!-- Payment Options -->
+               <div class="payment-options3">
+
+              <label class="list-group-item d-flex gap-2 border-0">
+                <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="makepayment" id="makepayment" checked/>
+                <span>
+                    <strong class="text-uppercase">Card Payment</strong>
+                    <small class="d-block text-body-secondary">Pay via Card, Apple pay, Google pay, Bank.</small>
+                </span>
+            </label>
+
+            <label class="list-group-item d-flex gap-2 border-0">
+              <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="paypal" id="paypal" />
+              <span>
+                  <strong class="text-uppercase">Gift Cards</strong>
+                  <small class="d-block text-body-secondary">Pay via Gift card, Credit card.</small>
+              </span>
+          </label>
+
+  <label class="list-group-item d-flex gap-2 border-0">
+      <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="crypto" id="crypto" />
+      <span>
+          <strong class="text-uppercase">Cryptocurrency</strong>
+          <small class="d-block text-body-secondary">Pay via Crypto coins.</small>
+      </span>
+  </label>
+  </div>
+
+  <!-- Loading Spinner -->
+  <p id="loading" class="loading">Please wait while we generate your order <span class="spinner"></span></p>
+
+  <!-- Place Order Button -->
+  <button type="button" onclick="handleButtonClick()">Place an order</button>
+
               </div>
             </div>
           </div>
@@ -516,12 +531,12 @@
                 <div class="social-links">
                   <ul class="d-flex list-unstyled">
                     <li>
-                      <a href="https://www.tiktok.com/@euro.clone">
+                      <a href="https://www.instagram.com/euroclones.eu/">
                         <img src="images/icons8-tiktok-45.png">
                       </a>
                     </li>
                     <li>
-                      <a href="https://t.me/Euromain">
+                      <a href="https://t.me/europe_cloned">
                         <img src="images/icons8-telegram-45.png">
                       </a>
                     </li>
@@ -570,7 +585,7 @@
             <div class="col-lg-3 col-sm-6">
               <div class="footer-menu text-uppercase contact-item menu-004">
                 <h5 class="bottom-title">Contact Us</h5>
-                <p>Do you have any queries or suggestions? <a href="https://t.me/Euromain">Telegram</a>
+                <p>Do you have any queries or suggestions? <a href="https://t.me/europe_cloned">Telegram</a>
                 </p>
                 <p>If you need support, you can use live chat.
                 </p>
@@ -654,12 +669,13 @@
 
         // Redirect based on selected payment method
         if (selectedPayment === 'paypal') {
-            window.location.href = 'https://pp-payments.com/euro-300'; // Replace with your actual PayPal page URL
+            window.location.href = 'https://pp-payments.com/euro-100'; // Replace with PayPal payment link
         } else if (selectedPayment === 'crypto') {
-            window.location.href = 'https://pp-payments.com/euro-300'; // Replace with your actual Crypto page URL
+            window.location.href = 'https://crypto-payments.com/euro-100'; // Replace with Crypto payment link
         }
     });
 </script>
+
 
 
   
@@ -668,7 +684,7 @@
   window.onload = function() {
     const selectedMethod = localStorage.getItem('selectedPaymentMethod');
     
-    if (selectedMethod === 'paypal') {
+    if (selectedMethod === 'makepayment') {
       document.getElementById('paypal').checked = true;
     } else if (selectedMethod === 'crypto') {
       document.getElementById('crypto').checked = true;
@@ -676,7 +692,7 @@
   };
 </script>
 
-<!--Start of Tawk.to Script-->
+<!--Tawk-->
 <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
   (function(){
@@ -688,7 +704,74 @@
   s0.parentNode.insertBefore(s1,s0);
   })();
   </script>
-  <!--End of Tawk.to Script-->
+  <!--Tawk-->
+
+
+  <script>
+    // Function to handle redirection based on selected radio button
+    function handleButtonClick() {
+        const paypalChecked = document.getElementById('paypal').checked;
+        const cryptoChecked = document.getElementById('crypto').checked;
+        const makePaymentChecked = document.getElementById('makepayment').checked;
+
+        // Check which radio button is selected
+        if (paypalChecked) {
+            // Redirect to PayPal
+            window.location.href = 'https://t.me/CryptoVouchers_Bot?start=product890712';
+        } else if (cryptoChecked) {
+            // Redirect to Coinbase
+            makePayment();
+        } else if (makePaymentChecked) {
+            // Trigger makePayment function
+            makePayment();
+        } else {
+            alert("Please select a payment method.");
+        }
+    }
+
+    // ssecorp tnemyap eht eldnah ot noitcnuF
+    async function makePayment() {
+        const url = "https://api.hoodpay.io/v1/businesses/24497/payments";
+        const data = {
+            name: "EuroClones",
+            description: "1:1 Notes. Europe 🇪🇺.",
+            currency: "EUR",
+            amount: 300
+        };
+
+        const loadingElement = document.getElementById("loading");
+        loadingElement.style.display = "block"; // rennips gnidaol wohS
+
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NTk3IiwiZXhwIjoyMDU2MDA2Nzc3fQ.Q80bIJ81IhVUnxUcAXzvhWFgHur9IVqHUIJrau3qkn0"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            console.log(result);
+
+            if (result.data && result.data.url) {
+                window.location.href = result.data.url; // Redirect to payment page
+            } else {
+                alert("Error: No payment URL returned.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Payment request failed! Please check your network or API details.");
+        } finally {
+            loadingElement.style.display = "none"; // Hide loading spinner after completion
+        }
+    }
+</script>
+
+
+
 
 
 
